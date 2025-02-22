@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Circle Modular Wallets - Setup Guide
 
-## Getting Started
+## Overview
 
-First, run the development server:
+This guide will walk you through setting up a Circle Developer Console account, creating a client key for web, configuring the passkey server for localhost, and obtaining the client URL to integrate with your app.
+
+## Create a Circle Developer Console Account
+
+1. Visit the [Circle Developer Console](http://console.circle.com/).
+2. Sign up or log in with your credentials.
+
+## Generate a Client Key for Web
+
+1. In the Developer Console, go to API & Client Keys.
+2. Click on Client Keys Tab.
+3. Click on Create a key button and choose Client Key.
+4. Add Key Name and enter the value of localhost in the Allowed Domain field of Web.
+
+## Configure the Passkey Server for Localhost
+
+1. In the Circle Developer Console, navigate to the Modular Wallets section on the left sidebar.
+2. Click on Configurator.
+3. Configure your application's domain. In this case, set it to localhost.
+4. Once configured, copy the Client URL from the Configurator screen.
+
+## Set Up Environment Variables
+
+1. Create a .env file in your project root and add:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+NEXT_PUBLIC_CLIENT_KEY=<your-client-key>
+NEXT_PUBLIC_CLIENT_URL=<your-client-url>
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Install and Run the Application
+```bash
+npm install
+npm run dev
+```
+Once the application starts, open your browser and go to:
+```bash
+http://localhost:3000
+```
